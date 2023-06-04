@@ -27,11 +27,11 @@
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/tiet_username"
+        android:background="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="@string/hint_input_email"
         android:inputType="textPersonName"
-        android:background="@android:color/transparent"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
