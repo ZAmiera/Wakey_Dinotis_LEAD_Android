@@ -14,7 +14,6 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login2)
 
         _binding = ActivityLogin2Binding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -31,13 +30,26 @@ class LoginActivity : AppCompatActivity() {
                 val password = (tietPassword.text).toString()
                 val berhasilPass = "admin"
                 val berhasilUserName = "Admin"
-                if ((password == berhasilPass) && (username == berhasilUserName)) {
-                    Toast.makeText(this@LoginActivity, "$username anda berhasil login", Toast.LENGTH_SHORT).show()
-                }else{
-                    Toast.makeText(this@LoginActivity, "anda gagal login, silahkan coba lagi", Toast.LENGTH_SHORT).show()
+                if (isValid(username, password)) {
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "$username anda berhasil login",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    Toast.makeText(
+                        this@LoginActivity,
+                        "anda gagal login, silahkan coba lagi",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
             }
         }
     }
+
+    fun isValid(username: String, pass: String): Boolean =
+        (username == "Admin") && (pass == "admin")
+
+
 }
